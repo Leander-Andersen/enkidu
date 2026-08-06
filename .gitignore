@@ -1,0 +1,80 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+sdist/
+.Python
+
+# Virtualenvs (the packaged venv is built at package time, never committed)
+venv/
+.venv/
+env/
+ENV/
+
+# Test / lint / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# --- Packaging artefacts (nfpm output, dpkg build by-products) ---
+dist/
+*.deb
+*.ddeb
+*.buildinfo
+*.changes
+*.dsc
+*.tar.xz
+*.tar.gz
+
+# --- Application runtime state ---
+# Never commit the SQLite DB, per-job ffmpeg logs, sample encodes or
+# a locally-edited copy of the conffile.
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+/var/
+logs/
+*.log
+samples/
+config.local.toml
+
+# Local scratch encodes / test media
+*.mkv
+*.mp4
+*.m4v
+*.webm
+*.avi
+*.ts
+
+# --- Editors / IDEs ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS / sync noise (this tree lives under a OneDrive mount) ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+~$*
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
